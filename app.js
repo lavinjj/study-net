@@ -1,4 +1,4 @@
-angular.module('studyNet', ['ui.bootstrap','ui.utils','ngRoute','ngAnimate']);
+angular.module('studyNet', ['ui.bootstrap','ui.utils','ngRoute','ngAnimate', 'ngSanitize']);
 
 angular.module('studyNet').config(function($routeProvider) {
 

@@ -7,20 +7,20 @@
         <input type="radio" id="testType" ng-model="currentTest" ng-click="updateCurrentTest('extra')" value="extra"> Extra
     </div>
     <div class="row">
-        <h3 ng-bind="currentQuestion.Id"></h3>
+        <h3 ng-bind-html="currentQuestion.Id"></h3>
     </div>
     <div class="row">
-        <div>FCC Section: <span ng-bind="currentQuestion.FCCSection"></span></div>
+        <div>FCC Section: <span ng-bind-html="currentQuestion.FCCSection"></span></div>
     </div>
     <div class="row">&nbsp;</div>
     <div class="row">
-        <p ng-bind="currentQuestion.QuestionText"></p>
+        <p ng-bind-html="currentQuestion.QuestionText"></p>
     </div>
     <div class="row">&nbsp;</div>
     <table class="table table-bordered">
         <tr ng-repeat="answer in currentQuestion.Answers" ng-class="isValidAnswer($index)" >
-            <td ng-bind="answer.AnswerId"></td>
-            <td ng-bind="answer.AnswerText"></td>
+            <td ng-bind-html="answer.AnswerId"></td>
+            <td ng-bind-html="answer.AnswerText"></td>
         </tr>
     </table>
     <div class="row pull-right">
