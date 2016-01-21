@@ -1,24 +1,28 @@
 <div class="col-md-12" ng-controller="HomeCtrl">
     <div class="row">
-        <h3>W5LVC Study Net</h3>
+        <h2>W5LVC Study Net</h2>
     </div>
     <div class="row">
         <input type="radio" id="testType" ng-model="currentTest" ng-click="updateCurrentTest('general')" value="general"> General
         <input type="radio" id="testType" ng-model="currentTest" ng-click="updateCurrentTest('extra')" value="extra"> Extra
     </div>
     <div class="row">
-        <h3 ng-bind-html="currentQuestion.id"></h3>
+        <h3 ng-bind="currentQuestion.Id"></h3>
     </div>
     <div class="row">
-        <div>FCC Section: <span ng-bind-html="currentQuestion.FCCSection"></span></div>
+        <div>FCC Section: <span ng-bind="currentQuestion.FCCSection"></span></div>
     </div>
+    <div class="row">&nbsp;</div>
     <div class="row">
-        <p ng-bind-html="currentQuestion.Text"></p>
+        <p ng-bind="currentQuestion.QuestionText"></p>
     </div>
-    <div class="row" ng-repeat="answer in currentQuestion.Answers">
-        <div class="col-md-2" ng-bind-html="answer.Id"></div>
-        <div class="col-md-8" ng-bind-html="answer.answerText"></div>
-    </div>
+    <div class="row">&nbsp;</div>
+    <table class="table table-bordered">
+        <tr ng-repeat="answer in currentQuestion.Answers" ng-class="isValidAnswer($index)" >
+            <td ng-bind="answer.AnswerId"></td>
+            <td ng-bind="answer.AnswerText"></td>
+        </tr>
+    </table>
     <div class="row pull-right">
         <button id="nextQuestion" class="btn btn-default" ng-click="nextQuestion()">Next</button>
     </div>
